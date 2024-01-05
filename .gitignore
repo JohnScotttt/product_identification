@@ -1,0 +1,6 @@
+.vscode
+data*
+output*
+categories.json
+test.py
+txt_data
