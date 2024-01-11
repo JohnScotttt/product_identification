@@ -1,7 +1,14 @@
 .vscode
-data*
-output*
+data
+data_before
+output
 test.py
 txt_data
 train.py
+valid_new
+visualization.py
+test
+train
+valid
+pred.py
 ```
