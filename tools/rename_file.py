@@ -3,10 +3,10 @@ import shutil
 from tqdm import tqdm
 import json
 
-def rename_file(data_root_path, new_data_root_path, index_path="index.json"):
+def rename_file(data_root_path, new_data_root_path, mapping_path="mapping.json"):
     categories = os.listdir(data_root_path)
-    index = json.load(open(index_path, "r"))
-    inversed_index = {v: k for k, v in index.items()}
+    mapping = json.load(open(mapping_path, "r"))
+    inversed_mapping = {v: k for k, v in mapping.items()}
 
     if not os.path.exists(new_data_root_path):
         os.makedirs(new_data_root_path)
@@ -14,10 +14,10 @@ def rename_file(data_root_path, new_data_root_path, index_path="index.json"):
         raise Exception("new_data_root_path is not empty")
 
     for category in tqdm(categories):
-        if category not in inversed_index:
-            raise Exception(f"{category} is not in index.json")
+        if category not in inversed_mapping:
+            raise Exception(f"{category} is not in mapping.json")
         
-        i = inversed_index[category]
+        i = inversed_mapping[category]
         category_path = os.path.join(data_root_path, category)
         files = os.listdir(category_path)
         new_category_path = os.path.join(new_data_root_path, i)
