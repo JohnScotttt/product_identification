@@ -12,4 +12,5 @@ train
 valid
 pred.py
 test_before
+__pycache__
 ```
