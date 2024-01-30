@@ -4,7 +4,7 @@ data_before
 output
 test.py
 txt_data
-train.py
+baseline/train.py
 valid_new
 visualization.py
 test
